@@ -14,16 +14,19 @@ dqn_eval_df = pd.read_csv(DQN_EVAL_CSV)
 dqn_rollout_df = pd.read_csv(DQN_ROLLOUT_CSV)
 ppo_rollout_df = pd.read_csv(PPO_ROLLOUT_CSV)
 
+
 # Plot DQN data
 def plot_dqn_data():
     plt.figure(figsize=(10, 6))
-    plt.title("DQN Training and Evaluation")
+    # plt.title("DQN Training and Evaluation")
 
     # Plot DQN rollout
-    sns.lineplot(data=dqn_rollout_df, x="Step", y="Value", label="DQN Rollout")
+    sns.lineplot(data=dqn_rollout_df, x="Step", y="Value", label="DQN Training")
 
     # Plot DQN evaluation
-    sns.lineplot(data=dqn_eval_df, x="Step", y="Value", label="DQN Evaluation", linestyle="--")
+    sns.lineplot(
+        data=dqn_eval_df, x="Step", y="Value", label="DQN Evaluation", linestyle="--"
+    )
 
     plt.xlabel("Step")
     plt.ylabel("Mean Reward")
@@ -35,13 +38,19 @@ def plot_dqn_data():
 # Plot PPO data
 def plot_ppo_data():
     plt.figure(figsize=(10, 6))
-    plt.title("PPO Training and Evaluation")
+    # plt.title("PPO Training and Evaluation")
 
     # Plot PPO rollout
-    sns.lineplot(data=ppo_rollout_df, x="Step", y="Value", label="PPO Rollout")
+    sns.lineplot(data=ppo_rollout_df, x="Step", y="Value", label="PPO Training")
 
     # Plot PPO evaluation
-    sns.lineplot(data=pd.read_csv(PPO_EVAL_CSV), x="Step", y="Value", label="PPO Evaluation", linestyle="--")
+    sns.lineplot(
+        data=pd.read_csv(PPO_EVAL_CSV),
+        x="Step",
+        y="Value",
+        label="PPO Evaluation",
+        linestyle="--",
+    )
 
     plt.xlabel("Step")
     plt.ylabel("Mean Reward")
