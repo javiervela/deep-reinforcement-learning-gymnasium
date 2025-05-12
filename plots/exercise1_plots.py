@@ -17,7 +17,7 @@ ppo_rollout_df = pd.read_csv(PPO_ROLLOUT_CSV)
 
 # Plot DQN data
 def plot_dqn_data():
-    plt.figure(figsize=(10, 6))
+    plt.figure(figsize=(6, 4))
     # plt.title("DQN Training and Evaluation")
 
     # Plot DQN rollout
@@ -37,7 +37,7 @@ def plot_dqn_data():
 
 # Plot PPO data
 def plot_ppo_data():
-    plt.figure(figsize=(10, 6))
+    plt.figure(figsize=(6, 4))
     # plt.title("PPO Training and Evaluation")
 
     # Plot PPO rollout
