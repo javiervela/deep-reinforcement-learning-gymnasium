@@ -7,7 +7,7 @@ package-mode = false
 
 [tool.poetry.dependencies]
 python = "^3.13"
-gymnasium = {extras = ["classic-control"], version = "^1.1.1"}
+gymnasium = {extras = ["box2d"], version = "^1.1.1"}
 stable-baselines3 = "^2.6.0"
 tensorboard = "^2.19.0"
 ipykernel = "^6.29.5"
@@ -17,6 +17,7 @@ pandas = "^2.2.3"
 matplotlib = "^3.10.3"
 standard-imghdr = "^3.13.0"
 seaborn = "^0.13.2"
+swig = "^4.3.1"
 
 
 [build-system]
