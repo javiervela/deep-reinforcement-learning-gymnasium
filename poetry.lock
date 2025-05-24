@@ -13,6 +13,42 @@ files = [
 ]
 
 [[package]]
+name = "ale-py"
+version = "0.11.0"
+description = "The Arcade Learning Environment (ALE) - a platform for AI research."
+optional = false
+python-versions = ">=3.9"
+groups = ["main"]
+files = [
+    {file = "ale_py-0.11.0-cp310-cp310-macosx_13_0_arm64.whl", hash = "sha256:f9c54aeac2cce17cb3907793d4da610bd8a0aff0d60e6aafb3a2b87aeea017c0"},
+    {file = "ale_py-0.11.0-cp310-cp310-macosx_13_0_x86_64.whl", hash = "sha256:815343c042f7e7249b724bdc3a2047186e2a3295c17b4a232ed784e7e942fad1"},
+    {file = "ale_py-0.11.0-cp310-cp310-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:5510d0db836656961bb3b9c0388334b285e1e37de9eaa8a01248e125b9f5c876"},
+    {file = "ale_py-0.11.0-cp310-cp310-win_amd64.whl", hash = "sha256:8f46bbed02dbd69536ec29ebff0520ade268290f08645d57ae7338461aa6a559"},
+    {file = "ale_py-0.11.0-cp311-cp311-macosx_13_0_arm64.whl", hash = "sha256:7f080ed7e25fb423ad37814ad5881362af7c70f55fb8241a582200ce658c3234"},
+    {file = "ale_py-0.11.0-cp311-cp311-macosx_13_0_x86_64.whl", hash = "sha256:3c6d45cca81b6cdafd61386e1e6f22a8d3d2fc0802c18fda13a5dcc6544e004c"},
+    {file = "ale_py-0.11.0-cp311-cp311-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:42738511a759e1ef3658faff221ad0b53b212384e5225ec290ce5370695968fd"},
+    {file = "ale_py-0.11.0-cp311-cp311-win_amd64.whl", hash = "sha256:64843b4e8769dd26246606b30078a99a1d571d257fa05c638ebb7f9a3c8be421"},
+    {file = "ale_py-0.11.0-cp312-cp312-macosx_13_0_arm64.whl", hash = "sha256:95b2d483c0b0325c455183ec352e167f27986a20836af6ab8a0f986aa9f52d36"},
+    {file = "ale_py-0.11.0-cp312-cp312-macosx_13_0_x86_64.whl", hash = "sha256:443c671452d864232e6c00159cb693ec2dfd1bed454dc450f05f0b2352d0d6ca"},
+    {file = "ale_py-0.11.0-cp312-cp312-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:efc7549d785b6901f749396b7b2f78e34e4d346652f7958559424efb61989ad3"},
+    {file = "ale_py-0.11.0-cp312-cp312-win_amd64.whl", hash = "sha256:d694b0292b6780a1e21e2fc640f465cd27e1619e787e1a683aa18ec11aa8a750"},
+    {file = "ale_py-0.11.0-cp313-cp313-macosx_13_0_arm64.whl", hash = "sha256:7418731017070295ba02507522c3aa0c9e5ce202d4f73d03514c05989f6df67c"},
+    {file = "ale_py-0.11.0-cp313-cp313-macosx_13_0_x86_64.whl", hash = "sha256:c3db4e0d97f6b048948595e19604bb533ac7a0fd2d2bdaa09e1c2b108bc5a4ce"},
+    {file = "ale_py-0.11.0-cp313-cp313-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:8bd29dad12a683de80fea6c6d92871c985d39170741c40a0dd66cd2ff42fdae7"},
+    {file = "ale_py-0.11.0-cp313-cp313-win_amd64.whl", hash = "sha256:85abda2b28ecf5d3b014ed176422e25e7a91e469e1f231aaaf60ba655fb7e24f"},
+    {file = "ale_py-0.11.0-cp39-cp39-macosx_13_0_arm64.whl", hash = "sha256:2678efbe2c7ffa9a4c2c1e44d08fda341746565d12f15c46d329bcd2f5abfd41"},
+    {file = "ale_py-0.11.0-cp39-cp39-macosx_13_0_x86_64.whl", hash = "sha256:f5bb910bead4447d8926aa44bc5b55f8812d41b54ba15751d585ec991cbaba84"},
+    {file = "ale_py-0.11.0-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl", hash = "sha256:142f933df7b9832e5dcb4549ff0347a3150024d1dde897113d64cace6c9db634"},
+    {file = "ale_py-0.11.0-cp39-cp39-win_amd64.whl", hash = "sha256:6fa7929cd8cbbc98d0f7ea9a341cd07ea26fa5866c1e4529a82e735edf5358ad"},
+]
+
+[package.dependencies]
+numpy = ">1.20"
+
+[package.extras]
+test = ["gymnasium (>=1.0.0)", "opencv-python (>=3.0)", "pytest (>=7.0)"]
+
+[[package]]
 name = "alembic"
 version = "1.16.1"
 description = "A database migration tool for SQLAlchemy."
@@ -176,7 +212,7 @@ description = "Cross-platform colored terminal text."
 optional = false
 python-versions = "!=3.0.*,!=3.1.*,!=3.2.*,!=3.3.*,!=3.4.*,!=3.5.*,!=3.6.*,>=2.7"
 groups = ["main"]
-markers = "sys_platform == \"win32\" or platform_system == \"Windows\""
+markers = "platform_system == \"Windows\" or sys_platform == \"win32\""
 files = [
     {file = "colorama-0.4.6-py2.py3-none-any.whl", hash = "sha256:4f1d9991f5acc0ca119f9d443620b77f9d6b33703e51011c16baf57afb285fc6"},
     {file = "colorama-0.4.6.tar.gz", hash = "sha256:08695f5cb7ed6e0531a20572697297273c47b8cae5a63ffc6d6ed5c201be6e44"},
@@ -759,6 +795,28 @@ files = [
 pygments = "*"
 
 [[package]]
+name = "ipywidgets"
+version = "8.1.7"
+description = "Jupyter interactive widgets"
+optional = false
+python-versions = ">=3.7"
+groups = ["main"]
+files = [
+    {file = "ipywidgets-8.1.7-py3-none-any.whl", hash = "sha256:764f2602d25471c213919b8a1997df04bef869251db4ca8efba1b76b1bd9f7bb"},
+    {file = "ipywidgets-8.1.7.tar.gz", hash = "sha256:15f1ac050b9ccbefd45dccfbb2ef6bed0029d8278682d569d71b8dd96bee0376"},
+]
+
+[package.dependencies]
+comm = ">=0.1.3"
+ipython = ">=6.1.0"
+jupyterlab_widgets = ">=3.0.15,<3.1.0"
+traitlets = ">=4.3.1"
+widgetsnbextension = ">=4.0.14,<4.1.0"
+
+[package.extras]
+test = ["ipykernel", "jsonschema", "pytest (>=3.6.0)", "pytest-cov", "pytz"]
+
+[[package]]
 name = "jedi"
 version = "0.19.2"
 description = "An autocompletion tool for Python that can be used for text editors."
@@ -839,6 +897,18 @@ traitlets = ">=5.3"
 [package.extras]
 docs = ["myst-parser", "pydata-sphinx-theme", "sphinx-autodoc-typehints", "sphinxcontrib-github-alt", "sphinxcontrib-spelling", "traitlets"]
 test = ["ipykernel", "pre-commit", "pytest (<8)", "pytest-cov", "pytest-timeout"]
+
+[[package]]
+name = "jupyterlab-widgets"
+version = "3.0.15"
+description = "Jupyter interactive widgets for JupyterLab"
+optional = false
+python-versions = ">=3.7"
+groups = ["main"]
+files = [
+    {file = "jupyterlab_widgets-3.0.15-py3-none-any.whl", hash = "sha256:d59023d7d7ef71400d51e6fee9a88867f6e65e10a4201605d2d7f3e8f012a31c"},
+    {file = "jupyterlab_widgets-3.0.15.tar.gz", hash = "sha256:2920888a0c2922351a9202817957a68c07d99673504d6cd37345299e971bb08b"},
+]
 
 [[package]]
 name = "kiwisolver"
@@ -965,6 +1035,31 @@ files = [
 [package.extras]
 docs = ["mdx_gh_links (>=0.2)", "mkdocs (>=1.6)", "mkdocs-gen-files", "mkdocs-literate-nav", "mkdocs-nature (>=0.6)", "mkdocs-section-index", "mkdocstrings[python]"]
 testing = ["coverage", "pyyaml"]
+
+[[package]]
+name = "markdown-it-py"
+version = "3.0.0"
+description = "Python port of markdown-it. Markdown parsing, done right!"
+optional = false
+python-versions = ">=3.8"
+groups = ["main"]
+files = [
+    {file = "markdown-it-py-3.0.0.tar.gz", hash = "sha256:e3f60a94fa066dc52ec76661e37c851cb232d92f9886b15cb560aaada2df8feb"},
+    {file = "markdown_it_py-3.0.0-py3-none-any.whl", hash = "sha256:355216845c60bd96232cd8d8c40e8f9765cc86f46880e43a8fd22dc1a1a8cab1"},
+]
+
+[package.dependencies]
+mdurl = ">=0.1,<1.0"
+
+[package.extras]
+benchmarking = ["psutil", "pytest", "pytest-benchmark"]
+code-style = ["pre-commit (>=3.0,<4.0)"]
+compare = ["commonmark (>=0.9,<1.0)", "markdown (>=3.4,<4.0)", "mistletoe (>=1.0,<2.0)", "mistune (>=2.0,<3.0)", "panflute (>=2.3,<3.0)"]
+linkify = ["linkify-it-py (>=1,<3)"]
+plugins = ["mdit-py-plugins"]
+profiling = ["gprof2dot"]
+rtd = ["jupyter_sphinx", "mdit-py-plugins", "myst-parser", "pyyaml", "sphinx", "sphinx-copybutton", "sphinx-design", "sphinx_book_theme"]
+testing = ["coverage", "pytest", "pytest-cov", "pytest-regressions"]
 
 [[package]]
 name = "markupsafe"
@@ -1109,6 +1204,18 @@ files = [
 
 [package.dependencies]
 traitlets = "*"
+
+[[package]]
+name = "mdurl"
+version = "0.1.2"
+description = "Markdown URL utilities"
+optional = false
+python-versions = ">=3.7"
+groups = ["main"]
+files = [
+    {file = "mdurl-0.1.2-py3-none-any.whl", hash = "sha256:84008a41e51615a49fc9966191ff91509e3c40b939176e643fd50a5c2196b8f8"},
+    {file = "mdurl-0.1.2.tar.gz", hash = "sha256:bb413d29f5eea38f31dd4754dd7377d4465116fb207585f97bf925588687c1ba"},
+]
 
 [[package]]
 name = "mpmath"
@@ -2162,6 +2269,25 @@ files = [
 cffi = {version = "*", markers = "implementation_name == \"pypy\""}
 
 [[package]]
+name = "rich"
+version = "14.0.0"
+description = "Render rich text, tables, progress bars, syntax highlighting, markdown and more to the terminal"
+optional = false
+python-versions = ">=3.8.0"
+groups = ["main"]
+files = [
+    {file = "rich-14.0.0-py3-none-any.whl", hash = "sha256:1c9491e1951aac09caffd42f448ee3d04e58923ffe14993f6e83068dc395d7e0"},
+    {file = "rich-14.0.0.tar.gz", hash = "sha256:82f1bc23a6a21ebca4ae0c45af9bdbc492ed20231dcb63f297d6d1021a9d5725"},
+]
+
+[package.dependencies]
+markdown-it-py = ">=2.2.0"
+pygments = ">=2.13.0,<3.0.0"
+
+[package.extras]
+jupyter = ["ipywidgets (>=7.5.1,<9)"]
+
+[[package]]
 name = "sb3-contrib"
 version = "2.6.0"
 description = "Contrib package of Stable Baselines3, experimental code."
@@ -2340,12 +2466,20 @@ files = [
 ]
 
 [package.dependencies]
+ale-py = {version = ">=0.9.0", optional = true, markers = "extra == \"extra\""}
 cloudpickle = "*"
 gymnasium = ">=0.29.1,<1.2.0"
 matplotlib = "*"
 numpy = ">=1.20,<3.0"
+opencv-python = {version = "*", optional = true, markers = "extra == \"extra\""}
 pandas = "*"
+pillow = {version = "*", optional = true, markers = "extra == \"extra\""}
+psutil = {version = "*", optional = true, markers = "extra == \"extra\""}
+pygame = {version = "*", optional = true, markers = "extra == \"extra\""}
+rich = {version = "*", optional = true, markers = "extra == \"extra\""}
+tensorboard = {version = ">=2.9.1", optional = true, markers = "extra == \"extra\""}
 torch = ">=2.3,<3.0"
+tqdm = {version = "*", optional = true, markers = "extra == \"extra\""}
 
 [package.extras]
 docs = ["sphinx (>=5,<9)", "sphinx-autobuild", "sphinx-rtd-theme (>=1.3.0)", "sphinx_copybutton", "sphinxcontrib.spelling"]
@@ -2663,7 +2797,19 @@ MarkupSafe = ">=2.1.1"
 [package.extras]
 watchdog = ["watchdog (>=2.3)"]
 
+[[package]]
+name = "widgetsnbextension"
+version = "4.0.14"
+description = "Jupyter interactive widgets for Jupyter Notebook"
+optional = false
+python-versions = ">=3.7"
+groups = ["main"]
+files = [
+    {file = "widgetsnbextension-4.0.14-py3-none-any.whl", hash = "sha256:4875a9eaf72fbf5079dc372a51a9f268fc38d46f767cbf85c43a36da5cb9b575"},
+    {file = "widgetsnbextension-4.0.14.tar.gz", hash = "sha256:a3629b04e3edb893212df862038c7232f62973373869db5084aed739b437b5af"},
+]
+
 [metadata]
 lock-version = "2.1"
 python-versions = "^3.13"
-content-hash = "d121f6de50c31bd530add6616b6a7209ece08755cfd004ea1ac0e753d904df8a"
+content-hash = "e7d6c3f3ec5b8395ee35658980d8efa646d1c90a46400bf16fdf0734c9770ed7"

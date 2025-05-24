@@ -8,7 +8,7 @@ package-mode = false
 [tool.poetry.dependencies]
 python = "^3.13"
 gymnasium = {extras = ["box2d"], version = "^1.1.1"}
-stable-baselines3 = "^2.6.0"
+stable-baselines3 = {extras = ["extra"], version = "^2.6.0"}
 tensorboard = "^2.19.0"
 ipykernel = "^6.29.5"
 opencv-python = "^4.11.0.86"
@@ -20,6 +20,9 @@ seaborn = "^0.13.2"
 swig = "^4.3.1"
 optuna = "^4.3.0"
 sb3-contrib = "^2.6.0"
+tqdm = "^4.67.1"
+rich = "^14.0.0"
+ipywidgets = "^8.1.7"
 
 
 [build-system]
