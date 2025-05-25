@@ -38,10 +38,41 @@ PPO_REW_PLOT_FILE = "./plots/exercise2_ppo_reward_plot.png"
 PPO_LEN_PLOT_FILE = "./plots/exercise2_ppo_len_plot.png"
 A2C_REW_PLOT_FILE = "./plots/exercise2_a2c_reward_plot.png"
 A2C_LEN_PLOT_FILE = "./plots/exercise2_a2c_len_plot.png"
+# Find global min/max for reward and add a little space
+all_reward_values = pd.concat(
+    [
+        dqn_eval_rew_df["Value"],
+        dqn_rollout_rew_df["Value"],
+        ppo_eval_rew_df["Value"],
+        ppo_rollout_rew_df["Value"],
+        a2c_eval_rew_df["Value"],
+        a2c_rollout_rew_df["Value"],
+    ]
+)
+reward_min, reward_max = all_reward_values.min(), all_reward_values.max()
+reward_range = reward_max - reward_min
+reward_min -= 0.05 * reward_range
+reward_max += 0.05 * reward_range
+
+# Find global min/max for episode length and add a little space
+all_len_values = pd.concat(
+    [
+        dqn_eval_len_df["Value"],
+        dqn_rollout_len_df["Value"],
+        ppo_eval_len_df["Value"],
+        ppo_rollout_len_df["Value"],
+        a2c_eval_len_df["Value"],
+        a2c_rollout_len_df["Value"],
+    ]
+)
+len_min, len_max = all_len_values.min(), all_len_values.max()
+len_range = len_max - len_min
+len_min -= 0.05 * len_range
+len_max += 0.05 * len_range
 
 
 def plot_metric(
-    rollout_df, eval_df, plot_file, ylabel, title, rollout_label, eval_label
+    rollout_df, eval_df, plot_file, ylabel, title, rollout_label, eval_label, ylim
 ):
     plt.figure(figsize=(6, 4))
     sns.lineplot(data=rollout_df, x="Step", y="Value", label=rollout_label)
@@ -49,6 +80,7 @@ def plot_metric(
     plt.xlabel("Step")
     plt.ylabel(ylabel)
     plt.title(title)
+    plt.ylim(ylim)
     plt.legend()
     plt.tight_layout()
     plt.savefig(plot_file)
@@ -64,6 +96,7 @@ plot_metric(
     "DQN: Reward vs Step",
     "DQN Training",
     "DQN Evaluation",
+    (reward_min, reward_max),
 )
 plot_metric(
     dqn_rollout_len_df,
@@ -73,6 +106,7 @@ plot_metric(
     "DQN: Episode Length vs Step",
     "DQN Training",
     "DQN Evaluation",
+    (len_min, len_max),
 )
 
 # PPO plots
@@ -84,6 +118,7 @@ plot_metric(
     "PPO: Reward vs Step",
     "PPO Training",
     "PPO Evaluation",
+    (reward_min, reward_max),
 )
 plot_metric(
     ppo_rollout_len_df,
@@ -93,6 +128,7 @@ plot_metric(
     "PPO: Episode Length vs Step",
     "PPO Training",
     "PPO Evaluation",
+    (len_min, len_max),
 )
 
 # A2C plots
@@ -104,6 +140,7 @@ plot_metric(
     "A2C: Reward vs Step",
     "A2C Training",
     "A2C Evaluation",
+    (reward_min, reward_max),
 )
 plot_metric(
     a2c_rollout_len_df,
@@ -113,4 +150,5 @@ plot_metric(
     "A2C: Episode Length vs Step",
     "A2C Training",
     "A2C Evaluation",
+    (len_min, len_max),
 )
