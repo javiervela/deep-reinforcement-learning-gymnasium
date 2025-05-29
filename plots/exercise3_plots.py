@@ -24,7 +24,6 @@ def plot_metric(
     sns.lineplot(data=eval_df, x="Step", y="Value", label=eval_label, linestyle="--")
     plt.xlabel("Step")
     plt.ylabel(ylabel)
-    plt.title(title)
     plt.legend()
     plt.tight_layout()
     plt.savefig(plot_file)
